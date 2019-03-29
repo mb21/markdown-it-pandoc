@@ -19,11 +19,9 @@ There are two optional arguments. The first is passed on
 With the second you can enable/disable `markdown-it-pandoc` extensions. For example:
 
 ```javascript
-var md = require('markdown-it-pandoc')(
-           {
-             html: true
-           }, {
-             implicit_figures: false
-           }
-         )
+var md = require('markdown-it-pandoc')({
+  html: true
+}, {
+  implicit_figures: false
+})
 ```
