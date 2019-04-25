@@ -4,8 +4,19 @@ Package bundling a few [markdown-it](https://github.com/markdown-it/markdown-it)
 plugins to approximate [pandoc flavoured markdown](http://pandoc.org/MANUAL.html#pandocs-markdown).
 
 Requires a lot of peer dependencies, depending on which extensions you enable.
-It's probably best if you take a quick look at [the source](./index.js).
+For up-to-date information, it is probably best to take a quick look at [the source](./index.js).
 
+| Options | Plugin dependency |
+|---------|-------------------|
+| `bracketed_spans` + `attributes` | markdown-it-bracketed-spans |
+| `attributes` | markdown-it-attrs |
+| `fenced_divs` + `attributes` | markdown-it-container |
+| `definition lists` | markdown-it-deflist |
+| `footnotes` | markdown-it-footnote |
+| `implicit_figures` | markdown-it-implicit-figures |
+| `subscript` | markdown-it-sub |
+| `superscript` | markdown-it-soup |
+| `katex` | markdown-it-texmath, katex |
 
 ## Usage
 
