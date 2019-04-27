@@ -3,7 +3,11 @@
 Package bundling a few [markdown-it](https://github.com/markdown-it/markdown-it)
 plugins to approximate [pandoc flavoured markdown](http://pandoc.org/MANUAL.html#pandocs-markdown).
 
-Requires a lot of peer dependencies, depending on which extensions you enable.
+For a demo, you can try [PanWriter](https://panwriter.com).
+
+## Dependencies
+
+This package requires a lot of peer dependencies, depending on which extensions you enable.
 For up-to-date information, it is probably best to take a quick look at [the source](./index.js).
 
 | Options | Plugin dependency |
@@ -17,6 +21,7 @@ For up-to-date information, it is probably best to take a quick look at [the sou
 | `subscript` | markdown-it-sub |
 | `superscript` | markdown-it-soup |
 | `katex` | markdown-it-texmath, katex |
+
 
 ## Usage
 
