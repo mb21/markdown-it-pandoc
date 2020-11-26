@@ -18,6 +18,7 @@ For up-to-date information, it is probably best to take a quick look at [the sou
 | `definition lists` | markdown-it-deflist |
 | `footnotes` | markdown-it-footnote |
 | `implicit_figures` | markdown-it-implicit-figures |
+| `grid_tables` | markdown-it-gridtables |
 | `subscript` | markdown-it-sub |
 | `superscript` | markdown-it-soup |
 | `katex` | markdown-it-texmath, katex |

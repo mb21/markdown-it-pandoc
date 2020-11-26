@@ -9,6 +9,7 @@ module.exports = function markdownItPandoc(markdownItOpts, markdownItPandocOpts)
                , fenced_divs:                true
                , footnotes:                  true
                , implicit_figures:           true
+               , grid_tables:                true
                , katex:                      true
                , subscript:                  true
                , superscript:                true
@@ -57,6 +58,11 @@ module.exports = function markdownItPandoc(markdownItOpts, markdownItPandocOpts)
 
   if (opts.implicit_figures) {
     md = md.use( require('markdown-it-implicit-figures'), {figcaption: true} );
+  }
+
+  if (opts.grid_tables) {
+    var gridtables = require('markdown-it-gridtables').default
+    md = md.use(gridtables);
   }
 
   if (opts.subscript) {
