@@ -20,7 +20,7 @@ For up-to-date information, it is probably best to take a quick look at [the sou
 | `implicit_figures` | markdown-it-implicit-figures |
 | `grid_tables` | markdown-it-gridtables |
 | `subscript` | markdown-it-sub |
-| `superscript` | markdown-it-soup |
+| `superscript` | markdown-it-sup |
 | `katex` | markdown-it-texmath, katex |
 
 
