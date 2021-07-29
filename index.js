@@ -1,6 +1,6 @@
 "use strict";
 
-module.exports = function markdownItPandoc(markdownItOpts, markdownItPandocOpts) {
+module.exports = function markdownItPandoc(md, markdownItPandocOpts) {
   var opts = Object.assign(
                {
                  attributes:                 true
@@ -15,8 +15,6 @@ module.exports = function markdownItPandoc(markdownItOpts, markdownItPandocOpts)
                , superscript:                true
                }
              , markdownItPandocOpts)
-
-  var md = require('markdown-it')(markdownItOpts);
 
   if (opts.bracketed_spans && opts.attributes) {
     md = md.use( require('markdown-it-bracketed-spans') );
