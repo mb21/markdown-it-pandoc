@@ -13,6 +13,7 @@ module.exports = function markdownItPandoc(md, markdownItPandocOpts) {
                , katex:                      true
                , subscript:                  true
                , superscript:                true
+               , task_lists:                 true
                }
              , markdownItPandocOpts)
 
@@ -69,6 +70,10 @@ module.exports = function markdownItPandoc(md, markdownItPandocOpts) {
 
   if (opts.superscript) {
     md = md.use( require('markdown-it-sup') );
+  }
+
+  if (opts.task_lists) {
+    md = md.use( require('markdown-it-task-lists') );
   }
 
   if (opts.katex) {

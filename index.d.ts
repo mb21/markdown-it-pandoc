@@ -11,6 +11,7 @@ declare const markdownItPandoc: (md: MarkdownIt, opts?: {
   katex:            boolean;
   subscript:        boolean;
   superscript:      boolean;
+  task_lists:       boolean;
 }) => MarkdownIt
 
 export default markdownItPandoc
