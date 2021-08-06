@@ -26,23 +26,34 @@ module.exports = function markdownItPandoc(md, markdownItPandocOpts) {
   }
 
   if (opts.fenced_divs && opts.attributes) {
+    function render_with_attributes(tokens, idx, options, env, slf) {
+      var token     = tokens[idx]
+        , className = token.info.trim()
+        , renderedAttrs = slf.renderAttrs(token)
+        ;
+      if (token.nesting === 1) {
+        return (className && className !== '{}')
+                ? '<div class="' + className + '">'
+                : '<div' + renderedAttrs + '>'
+                ;
+      } else {
+        return '</div>';
+      }
+    }
+    function render_without_attributes(tokens, idx) {
+      var token     = tokens[idx]
+        , className = token.info.trim()
+        ;
+      if (token.nesting === 1) {
+        return '<div class="' + className + '">';
+      } else {
+        return '</div>';
+      }
+    }
     md = md.use( require('markdown-it-container'), 'dynamic', {
               // adapted from https://github.com/markdown-it/markdown-it-container/issues/23
               validate: function() { return true; },
-              render: function(tokens, idx, options, env, slf) {
-                var token     = tokens[idx]
-                  , className = token.info.trim()
-                  , renderedAttrs = slf.renderAttrs(token)
-                  ;
-                if (token.nesting === 1) {
-                  return (className && className !== '{}')
-                          ? '<div class="' + className + '">'
-                          : '<div' + renderedAttrs + '>'
-                          ;
-                } else {
-                  return '</div>';
-                }
-              }
+              render: (opts.attributes ? render_with_attributes : render_without_attributes)
             });
   }
 
