@@ -25,7 +25,7 @@ module.exports = function markdownItPandoc(md, markdownItPandocOpts) {
     md = md.use( require('markdown-it-attrs') )
   }
 
-  if (opts.fenced_divs && opts.attributes) {
+  if (opts.fenced_divs) {
     function render_with_attributes(tokens, idx, options, env, slf) {
       var token     = tokens[idx]
         , className = token.info.trim()
