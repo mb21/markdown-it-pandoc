@@ -11,6 +11,7 @@ module.exports = function markdownItPandoc(md, markdownItPandocOpts) {
                , implicit_figures:           true
                , grid_tables:                true
                , katex:                      true
+               , mathjax:                    false
                , subscript:                  true
                , superscript:                true
                , task_lists:                 true
@@ -80,6 +81,10 @@ module.exports = function markdownItPandoc(md, markdownItPandocOpts) {
     md = md.use(
       require('markdown-it-texmath').use( require('katex') )
     );
+  }
+
+  if (opts.mathjax) {
+    md = md.use( require('markdown-it-mathjax3') );
   }
 
   return md;
