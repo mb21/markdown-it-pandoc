@@ -77,13 +77,13 @@ module.exports = function markdownItPandoc(md, markdownItPandocOpts) {
     md = md.use( require('markdown-it-task-lists') );
   }
 
-  if (opts.katex) {
+  if (opts.katex && !opts.mathjax) {
     md = md.use(
       require('markdown-it-texmath').use( require('katex') )
     );
   }
 
-  if (opts.mathjax) {
+  if (opts.mathjax && !opts.katex) {
     md = md.use( require('markdown-it-mathjax3') );
   }
 

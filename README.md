@@ -53,3 +53,5 @@ const md = markdownItPandoc(
 );
 md.render('my markdown string');
 ```
+Note that MathJax and KaTeX are exclusive features.
+You cannot set both options true.
