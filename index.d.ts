@@ -9,6 +9,7 @@ declare const markdownItPandoc: (md: MarkdownIt, opts?: {
   implicit_figures?: boolean;
   grid_tables?:      boolean;
   katex?:            boolean;
+  mathjax?:          boolean;
   subscript?:        boolean;
   superscript?:      boolean;
   task_lists?:       boolean;
