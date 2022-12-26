@@ -88,7 +88,7 @@ module.exports = function markdownItPandoc(md, markdownItPandocOpts) {
   }
 
   if (opts.highlight) {
-    md = md.use(require("markdown-it-highlightjs"));
+    md = md.use(require("markdown-it-highlightjs"), {auto: true});
   }
 
   return md;
