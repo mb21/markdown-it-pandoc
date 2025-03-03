@@ -8,8 +8,9 @@ module.exports = function markdownItPandoc(md, markdownItPandocOpts) {
                , definition_lists:           true
                , fenced_divs:                true
                , footnotes:                  true
-               , implicit_figures:           true
                , grid_tables:                true
+               , highlightjs:                true
+               , implicit_figures:           true
                , katex:                      true
                , mathjax:                    false
                , subscript:                  true
@@ -17,6 +18,11 @@ module.exports = function markdownItPandoc(md, markdownItPandocOpts) {
                , task_lists:                 true
                }
              , markdownItPandocOpts)
+
+  // highlightjs must be enabled before attributes
+  if (opts.highlightjs) {
+    md = md.use( require('markdown-it-highlightjs'), {code: false,inline: true} );
+  }
 
   if (opts.bracketed_spans && opts.attributes) {
     md = md.use( require('markdown-it-bracketed-spans') );

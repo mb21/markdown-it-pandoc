@@ -13,6 +13,7 @@ declare const markdownItPandoc: (md: MarkdownIt, opts?: {
   subscript?:        boolean;
   superscript?:      boolean;
   task_lists?:       boolean;
+  highlightjs?:      boolean;
 }) => MarkdownIt
 
 export default markdownItPandoc
