@@ -9,7 +9,7 @@ module.exports = function markdownItPandoc(md, markdownItPandocOpts) {
                , fenced_divs:                true
                , footnotes:                  true
                , grid_tables:                true
-               , highlightjs:                true
+               , highlight:                  true
                , implicit_figures:           true
                , katex:                      true
                , mathjax:                    false
@@ -20,8 +20,8 @@ module.exports = function markdownItPandoc(md, markdownItPandocOpts) {
              , markdownItPandocOpts)
 
   // highlightjs must be enabled before attributes
-  if (opts.highlightjs) {
-    md = md.use( require('markdown-it-highlightjs'), {code: false,inline: true} );
+  if (opts.highlight) {
+    md = md.use( require('markdown-it-highlightjs'), {code: false} );
   }
 
   if (opts.bracketed_spans && opts.attributes) {
