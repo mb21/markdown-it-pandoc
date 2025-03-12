@@ -24,6 +24,7 @@ For up-to-date information, it is probably best to take a quick look at [the sou
 | `task_lists`                     | markdown-it-task-lists       |
 | `katex`                          | markdown-it-texmath, katex   |
 | `mathjax`                        | markdown-it-mathjax3         |
+| `highlight`                      | markdown-it-highlightjs      |
 
 ## Usage
 
