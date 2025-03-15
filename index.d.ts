@@ -14,6 +14,9 @@ declare const markdownItPandoc: (md: MarkdownIt, opts?: {
   superscript?:      boolean;
   task_lists?:       boolean;
   highlight?:        boolean;
+  highlight_inline?: boolean;
+  tex_math_dollars?: boolean;
+  tex_math_single_backslash?: boolean;
 }) => MarkdownIt
 
 export default markdownItPandoc
