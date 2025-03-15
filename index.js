@@ -10,18 +10,24 @@ module.exports = function markdownItPandoc(md, markdownItPandocOpts) {
                , footnotes:                  true
                , grid_tables:                true
                , highlight:                  true
+               , highlight_inline:           false
                , implicit_figures:           true
                , katex:                      true
                , mathjax:                    false
                , subscript:                  true
                , superscript:                true
                , task_lists:                 true
+               , tex_math_dollars:           true
+               , tex_math_single_backslash:  false
                }
              , markdownItPandocOpts)
 
   // highlightjs must be enabled before attributes
   if (opts.highlight) {
-    md = md.use( require('markdown-it-highlightjs'), {code: false} );
+    md = md.use( require('markdown-it-highlightjs'), {
+      code: false,
+      inline: opts.highlight_inline
+    } );
   }
 
   if (opts.bracketed_spans && opts.attributes) {
@@ -84,8 +90,17 @@ module.exports = function markdownItPandoc(md, markdownItPandocOpts) {
   }
 
   if (opts.katex && !opts.mathjax) {
-    md = md.use(
-      require('markdown-it-texmath').use( require('katex') )
+    var delimiters = []
+    if (opts.tex_math_single_backslash) {
+      delimiters.push('brackets')
+    }
+    if (opts.tex_math_dollars) {
+      delimiters.push('dollars')
+    }
+    md = md.use(require('markdown-it-texmath'), {
+        engine: require('katex'),
+        delimiters: delimiters
+      }
     );
   }
 
