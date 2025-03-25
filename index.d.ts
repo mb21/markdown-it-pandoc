@@ -1,6 +1,6 @@
 import MarkdownIt from 'markdown-it'
 
-declare const markdownItPandoc: (md: MarkdownIt, opts?: {
+export interface MarkdownItPandocOptions {
   attributes?:       boolean;
   bracketed_spans?:  boolean;
   definition_lists?: boolean;
@@ -17,6 +17,8 @@ declare const markdownItPandoc: (md: MarkdownIt, opts?: {
   highlight_inline?: boolean;
   tex_math_dollars?: boolean;
   tex_math_single_backslash?: boolean;
-}) => MarkdownIt
+}
+
+declare const markdownItPandoc: (md: MarkdownIt, opts?: MarkdownItPandocOptions) => MarkdownIt
 
 export default markdownItPandoc
