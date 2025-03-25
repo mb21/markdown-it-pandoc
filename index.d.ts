@@ -1,6 +1,6 @@
 import MarkdownIt from 'markdown-it'
 
-export interface MarkdownItPandocOptions {
+interface MarkdownItPandocOptions {
   attributes?:       boolean;
   bracketed_spans?:  boolean;
   definition_lists?: boolean;
@@ -21,4 +21,10 @@ export interface MarkdownItPandocOptions {
 
 declare const markdownItPandoc: (md: MarkdownIt, opts?: MarkdownItPandocOptions) => MarkdownIt
 
-export default markdownItPandoc
+// Export both the function and the options interface
+declare namespace markdownItPandoc {
+  export { MarkdownItPandocOptions };
+}
+
+// Export using CommonJS style
+export = markdownItPandoc;
