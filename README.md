@@ -28,33 +28,27 @@ For up-to-date information, it is probably best to take a quick look at [the sou
 | `mathjax`                        | markdown-it-mathjax3         |
 | `highlight`                      | markdown-it-highlightjs      |
 | `highlight_inline`               | markdown-it-highlightjs      |
+
+
 ## Usage
 
 ```javascript
-var md = require('markdown-it')();
-require('markdown-it-pandoc')(md);
-md.render('my markdown string');
+import mdIt from 'markdown-it';
+import mdItPandoc from 'markdown-it-pandoc';
+
+const md = mdIt().use(mdItPandoc);
+const htmlStr = md.render('my markdown string');
 ```
 
 There is an optional second argument to enable/disable `markdown-it-pandoc` extensions. For example:
 
 ```javascript
-var md = require('markdown-it')({ html: true });
-require('markdown-it-pandoc')(md, { implicit_figures: false });
-md.render('my markdown string');
+import mdIt from 'markdown-it';
+import mdItPandoc from 'markdown-it-pandoc';
+
+const md = mdIt().use(mdItPandoc, { implicit_figures: false });
+const htmlStr = md.render('my markdown string');
 ```
 
-Or using import syntax:
-
-```javascript
-import markdownIt from 'markdown-it'
-import markdownItPandoc from 'markdown-it-pandoc'
-
-const md = markdownItPandoc(
-  markdownIt({ html: true }),
-  { implicit_figures: false }
-);
-md.render('my markdown string');
-```
 Note that MathJax and KaTeX are exclusive features.
 You cannot set both options true.
